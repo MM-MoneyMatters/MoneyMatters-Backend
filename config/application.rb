@@ -16,4 +16,5 @@ module MoneyMattersBackend
         resource '*', headers: :any, methods: [:get, :post, :options, :delete, :patch]
       end
     end
+  end
 end
