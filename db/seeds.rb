@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Type.destroy_all
+
+Type.create([{name:"Rent"},{name:"Utilities"},{name:"Entertainment"},{name:"Subscriptions"},{name:"Groceries"}, {name:"Other"}])
