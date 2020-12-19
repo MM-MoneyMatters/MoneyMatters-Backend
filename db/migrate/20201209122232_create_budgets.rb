@@ -4,7 +4,7 @@ class CreateBudgets < ActiveRecord::Migration[6.0]
       t.belongs_to :type
       t.belongs_to :user
       t.belongs_to :transaction
-      t.integer :amount
+      t.decimal :amount
       t.timestamps
     end
   end

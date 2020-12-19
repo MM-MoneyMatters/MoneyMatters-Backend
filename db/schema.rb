@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_19_224505) do
+ActiveRecord::Schema.define(version: 2020_12_09_122420) do
 
   create_table "budgets", force: :cascade do |t|
     t.integer "type_id"
     t.integer "user_id"
     t.integer "transaction_id"
-    t.integer "amount"
+    t.decimal "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["transaction_id"], name: "index_budgets_on_transaction_id"
@@ -35,12 +35,12 @@ ActiveRecord::Schema.define(version: 2020_12_19_224505) do
 
   create_table "transactions", force: :cascade do |t|
     t.string "name"
-    t.integer "cost"
+    t.decimal "amount"
     t.string "payment_method"
+    t.string "due_date"
     t.integer "type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "due_date"
     t.index ["type_id"], name: "index_transactions_on_type_id"
   end
 
@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(version: 2020_12_19_224505) do
     t.string "email"
     t.string "name"
     t.string "password_digest"
+    t.decimal "income"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.decimal "income"
   end
 
 end
